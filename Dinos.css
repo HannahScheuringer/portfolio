@@ -1,0 +1,244 @@
+/*------------------Navigation Anfang--------*/
+
+h1 {                                                        /*"Hannah Scheuringer"*/
+    font-size: 20pt;
+    font-family: franklin-gothic-urw, sans-serif;
+    font-weight: 200;                                       /*Schriftstärke*/
+    padding-left: 80px;                                     /*Abstand zum linken Bildschirmrand*/
+}
+
+h2 {                                                        /*"Arbeiten, Über mich, Kontakt*/
+    display: inline;                                        /*Text steht nebeneinander*/
+    font-size: 15pt;
+    padding: 20px;                                         /*Abstand zwischen Text*/
+    font-family: franklin-gothic-urw, sans-serif;
+    font-weight: 50;                                       /*Schriftstärke*/
+
+}
+
+#Navigation {                                  /*ganze Navigation ist rechtsbündig, Hannah Scheuringer wird unter #nav mit padding-left nach links geschoben*/
+    top: 0px;
+    text-align: right;
+    display: flex;                            /*Navigation in einer Linie*/
+    align-items: baseline;
+    position: fixed;                           /*fixierter Navigationsbalken*/
+    width: 100%;                                /*Balken geht über ganze Bildschirmbreite*/                        
+    background-color:white;                 /*Farbe des Balkens*/
+}
+
+#nav {
+    padding-left: 890px;                       /*Hannah Scheuringer steht am linken Rand*/
+}
+
+a {                                             /*Links zu Navigations-Unterseiten */                                        
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {                                   /*beim hovern über Navigation ändert sich Farbe*/
+    color: tan;
+}
+
+/*----------------------Ende Navigation------------------*/
+/*---------------------Typewriter Anfang------------------------*/
+
+
+.typewriter {
+    font-family: ballinger-mono, sans-serif;
+    font-style: bold;
+    font-weight: 100;
+    display: inline-block;
+    padding-top: 200px;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 0px;                                       
+ 	animation: typing 4s steps(18, end), blink 2s step-end infinite;         /*wie schnell springt Linie (in 4s Schritten), wiviele Zeichen bzw Schritte(12)*/
+    white-space: nowrap;
+    font-size: 90pt;
+    font-weight: 330;
+    border-right: 4px solid black;                                     /*Dicke und Farbe der Linie*/
+    border-top-width: medium;
+    padding-left: 245px;
+}
+
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 84% 
+    }
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: black; 
+    }
+}
+
+/*---------------------Typewriter Ende------------------------*/
+
+.Zitat {
+    font-size: 40pt;
+    font-family: franklin-gothic-urw, sans-serif;
+    width: 50%;
+    padding-left: 250px;
+    padding-top: 200px;
+    font-weight: 500;
+}
+
+/*---------------------Bilder Anfang------------------------*/
+
+#Mockup {
+    width: 79%
+}
+
+#Mockup1 {
+    width: 39%
+}
+
+#Mockup2 {
+    width: 39%;
+}
+
+
+
+.flex {                                      /* Bilder-Grid*/
+    Display: flex;
+    Flex-direction: row;                         /*—————> nebeneinander, column wäre untereinander */
+    Flex-wrap: wrap;                             /*—————> was passiert wenn Fenster kleiner wird? Wrap = untereinander */
+    Justify-content: center;
+    gap: 10px 10px;                             /* —————> abstand zwischen zwei Elementen (untereinander und nebeneinander) */
+    padding-top: 80px;
+}
+
+.Fließtext {
+    text-align: left;
+    padding-left: 250px;
+    width: 50%;
+    font-family: franklin-gothic-urw, sans-serif;
+    line-height: 140%;
+}
+
+#Pfeil {
+    padding-top: 50px;
+    height:200px
+}
+
+
+/*---------------------Bilder Ende------------------------*/
+/*-----------------Bildschirm Anpassung Anfang-----------------*/
+
+@media (max-width: 1200px) {                     /* wenn Bildschirm weniger als 800px groß ist soll sich Navigation auf rechtsbündig ändern*/
+    h1 {                                         
+        text-align: left;                          /*Hannah Scheuringer ist linksbündig*/
+        padding-left: 50px;
+    }
+
+    #Navigation {
+        text-align: left;
+        font-size: 8pt;                         /*funktioniert nicht*/
+        padding-left: 0px;
+        
+    }
+    #nav{
+        display:block;
+        padding-left: 40px;
+        text-align: left;
+        font-size: 8pt;
+        line-height: 250%;                      /*Zeilenabstand vergrößern*/
+    }
+
+    h2{
+        padding: 11px;                                         /*Abstand zwischen Text*/
+    }
+    
+    .typewriter-text {
+        display: inline-block;
+        overflow: hidden;
+        letter-spacing: 0px;                                       
+        animation: typing-small 4s steps(18, end), blink 2s step-end infinite;         /*wie schnell springt Linie (in 4s Schritten), wiviele Zeichen bzw Schritte(12)*/
+        white-space: nowrap;
+        font-size: 31pt;
+        font-weight: 330;
+        border-right: 4px solid black;                                     /*Dicke und Farbe der Linie*/
+        border-top-width: medium;
+        padding-left: 50px;
+    }
+
+    .typewriter {
+        padding-top: 300px;                         /*300px Abstand zur Navigation*/
+    }
+
+    @keyframes typing-small {
+        from { 
+            width: 0% 
+        }
+        to { 
+            width: 89% 
+        }
+    }
+
+    #Mockup {
+        width:100%;
+    }
+
+    #Mockup1 {
+        width: 100%;
+    }
+    
+    #Mockup2 {
+        width: 100%;
+    }
+    
+    #Mockup3 {
+        width: 100%;
+    }
+    .Fließtext {
+        padding-left: 50px;
+        width: 80%;
+    }
+
+    .Zitat {
+        padding-left:50px;
+        font-size: 30pt;
+        width: 80%;
+        padding-top:25px;
+    }
+}
+
+/*-----------------Bildschirm Anpassung Ende-----------------*/
+/*-----------------Sticky------------------------------------*/
+#Insta {
+    text-align: left;
+    font-family: franklin-gothic-urw, sans-serif;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    top: 48%;                           /*10% vom oberen Rand entfernt*/
+    right:1%;                          /*10% vom rechten Rand entfernt*/
+    color: black;
+    font-size: 12pt;
+    writing-mode: vertical-lr;
+} 
+
+
+#Email {
+    text-align: left;
+    font-family: franklin-gothic-urw, sans-serif;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    top: 50%;                           /*10% vom oberen Rand entfernt*/
+    left:1%;                          /*10% vom rechten Rand entfernt*/
+    color: black;
+    font-size: 12pt;
+    writing-mode: vertical-rl;
+} 
